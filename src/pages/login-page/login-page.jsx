@@ -15,7 +15,6 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    console.log(data, 'data');
     dispatch(login());
     navigate('/list');
   }

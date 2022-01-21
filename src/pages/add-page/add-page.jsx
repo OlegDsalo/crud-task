@@ -18,15 +18,10 @@ const AddPage = () => {
     const max = 100;
     const min = 2;
     const genereteId = Math.floor(Math.random() * (max - min) + min);
-    console.log('generetaid', genereteId);
     const newPost = {...data, id: genereteId}
-
-    console.log('NEWpost', newPost);
-
     dispatch(addPost(newPost));
     navigate('/list')
   };
-  console.log(errors, 'errors')
 
   return (
     <div className='add-page'>

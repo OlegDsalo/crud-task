@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React  from 'react';
 import { Controller, useForm, useFormState } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, TextField, Typography } from "@mui/material";
@@ -16,10 +16,6 @@ const EditPage = () => {
 
     const post = useSelector(state => state.post.singlePost);
 
-    console.log('post', post);
-
-
-
     const {handleSubmit, control} = useForm({
       defaultValues: {
         title: post.title,
@@ -30,7 +26,6 @@ const EditPage = () => {
 
     const onSubmit = (data) => {
       const editedPost = {...data, id: Number(id)};
-      console.log('editedPost', editedPost);
       dispatch(editPost(editedPost));
       navigate('/list');
     };
