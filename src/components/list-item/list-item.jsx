@@ -23,7 +23,8 @@ const ListItem = ({post}) => {
 
 
   return (
-    <Grid container className='list-item' sx={ {
+    <Grid container className='list-item' xs={12}
+          sx={ {
       margin: '10px auto',
       width: 600,
       maxHeight: 300,
