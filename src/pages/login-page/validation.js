@@ -2,7 +2,6 @@ const REQUIRED_FIELD = 'Need to fill';
 
 export const loginValidation = {
   required: REQUIRED_FIELD,
-
 }
 
 export const passwordValidation = {

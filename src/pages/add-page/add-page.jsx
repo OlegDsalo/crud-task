@@ -2,11 +2,11 @@ import React from 'react';
 import { Button, TextField, Typography } from "@mui/material";
 import './add-page.css'
 import { Controller, useForm, useFormState } from "react-hook-form";
-
 import { descriptionValidation, titleValidation } from "./validation";
 import { useDispatch } from "react-redux";
 import { addPost } from "../../store/post/post";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid'
 
 const AddPage = () => {
   const {handleSubmit, control} = useForm();
@@ -15,10 +15,8 @@ const AddPage = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    const max = 100;
-    const min = 2;
-    const genereteId = Math.floor(Math.random() * (max - min) + min);
-    const newPost = {...data, id: genereteId}
+    const newPost = {...data, id: uuidv4()}
+    console.log('new', newPost)
     dispatch(addPost(newPost));
     navigate('/list')
   };
@@ -43,7 +41,7 @@ const AddPage = () => {
               size='small'
               fullWidth
               onChange={ (e => field.onChange(e)) }
-              error={ errors.title?.message }
+              error={ !!errors.title?.message }
               helperText={ errors.title?.message }
               maxRows={ 2 }
             />
@@ -60,7 +58,7 @@ const AddPage = () => {
               size='small'
               fullWidth
               onChange={ (e => field.onChange(e)) }
-              error={ errors.description?.message }
+              error={ !!errors.description?.message }
               helperText={ errors.description?.message }
               multiline
               maxRows={ 7 }

@@ -12,7 +12,7 @@ const EditPage = () => {
     const {id} = useParams()
     const dispatch = useDispatch()
     const navigate = useNavigate();
-    dispatch(getPost(Number(id)));
+    dispatch(getPost((id)));
 
     const post = useSelector(state => state.post.singlePost);
 
@@ -25,7 +25,7 @@ const EditPage = () => {
     const {errors} = useFormState({control});
 
     const onSubmit = (data) => {
-      const editedPost = {...data, id: Number(id)};
+      const editedPost = {...data, id: id};
       dispatch(editPost(editedPost));
       navigate('/list');
     };
@@ -47,12 +47,11 @@ const EditPage = () => {
               <TextField
                 label="title"
                 margin='normal'
-
                 size='small'
                 fullWidth
                 value={ field.value }
                 onChange={ (e => field.onChange(e)) }
-                error={ errors.title?.message }
+                error={ !!errors.title?.message }
                 helperText={ errors.title?.message }
                 maxRows={ 2 }
               />
@@ -70,7 +69,7 @@ const EditPage = () => {
                 fullWidth
                 value={ field.value }
                 onChange={ (e => field.onChange(e)) }
-                error={ errors.description?.message }
+                error={ !!errors.description?.message }
                 helperText={ errors.description?.message }
                 multiline
                 maxRows={ 7 }

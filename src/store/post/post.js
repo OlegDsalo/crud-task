@@ -5,12 +5,12 @@ const post = createSlice({
   initialState: {
     posts: [
       {
-        id: 0,
+        id: '0',
         title: 'God of war',
         description: 'lorem',
       },
       {
-        id: 1,
+        id: '1',
         title: 'dog eats banana',
         description: 'loredmd dasdasdasdas  das dsa dasd',
       },

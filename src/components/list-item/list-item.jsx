@@ -23,12 +23,12 @@ const ListItem = ({post}) => {
 
 
   return (
-    <Grid container className='list-item' xs={12}
+    <Grid container className='list-item'
           sx={ {
-      margin: '10px auto',
-      width: 600,
-      maxHeight: 300,
-    } }>
+            margin: '10px auto',
+            maxWidth: 600,
+            maxHeight: 300,
+          } }>
       <Grid item xs={ 11 }>
         <Typography component="h1" variant="h5">
           { post.title }
