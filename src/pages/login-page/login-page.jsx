@@ -68,7 +68,7 @@ const LoginPage = () => {
           sx={ {
             marginTop: 2
           } }
-        >PUSH</Button>
+        >Login</Button>
       </form>
     </div>
   );
