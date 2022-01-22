@@ -16,7 +16,6 @@ const AddPage = () => {
 
   const onSubmit = (data) => {
     const newPost = {...data, id: uuidv4()}
-    console.log('new', newPost)
     dispatch(addPost(newPost));
     navigate('/list')
   };
