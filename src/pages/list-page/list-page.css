@@ -1,0 +1,9 @@
+.list-page {
+    margin: 0 auto;
+    width: 800px;
+    height: 965px;
+    padding-top: 64px;
+    border: 1px solid black;
+    background-color: #E8E8E8;
+    overflow-y: scroll;
+}
